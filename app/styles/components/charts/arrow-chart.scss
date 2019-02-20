@@ -1,0 +1,98 @@
+//colors
+$color_mine_shaft_approx: #333333;
+$white: #ffffff;
+$color_silver_approx: #bdbdbd;
+$color_tapa_approx: #767676;
+$color_burning_sand_approx: #dd8f7d;
+$color_periwinkle_gray_approx: #c0ccdd;
+
+//fonts
+$font_0: sans-serif;
+
+p {
+    font-family: $font_0;
+    font-size: 14px;
+    margin-bottom: 5;
+    float: left;
+}
+.g-county-group {
+    line {
+        stroke: $color_mine_shaft_approx;
+        stroke-width: 2px;
+    }
+    circle {
+        fill: $color_mine_shaft_approx;
+    }
+}
+.tick {
+    &.g-baseline {
+        line {
+            stroke: $color_mine_shaft_approx;
+            stroke-dasharray: 0;
+            stroke-width: 1px;
+        }
+        text {
+            display: none;
+        }
+    }
+    &.bolded text {
+        font-weight: 700;
+        fill: $color_mine_shaft_approx;
+    }
+}
+.domain {
+    display: none;
+}
+.repRect {
+    fill: $color_burning_sand_approx;
+    opacity: 0.5;
+}
+.demRect {
+    fill: $color_periwinkle_gray_approx;
+    opacity: 0.5;
+}
+.partylabel {
+    fill: $color_mine_shaft_approx;
+    font-weight: 700;
+    font-size: 16px;
+    font-family: $font_0;
+}
+.yearlabel {
+    fill: $color_mine_shaft_approx;
+    font-weight: 700;
+    font-size: 14px;
+    font-family: $font_0;
+}
+.arrow {
+    width: 60px;
+    display: inline;
+}
+.bold-text {
+    font-weight: 700;
+}
+.y.axis {
+    line {
+        fill: none;
+        stroke: $white;
+        stroke-dasharray: 1px 1px;
+        shape-rendering: crispEdges;
+        stroke-width: 1px;
+    }
+    text {
+        text-anchor: start !important;
+        font-size: 13px;
+        fill: $color_tapa_approx;
+    }
+}
+.x.axis line {
+    fill: none;
+    stroke: $white;
+    shape-rendering: crispEdges;
+    stroke-width: 1px;
+}
+.axis text {
+    font-family: $font_0;
+    font-size: 12px;
+    pointer-events: none;
+    fill: $color_silver_approx;
+}
