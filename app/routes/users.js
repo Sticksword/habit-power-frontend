@@ -11,7 +11,18 @@ export default Route.extend({
     const username = params.username;
     console.log(params);
 
-    return null;
+    return {
+      'challenges': [
+        {
+          'name': 'Alpha',
+          'score': 91
+        },
+        {
+          'name': 'Beta',
+          'score': 93
+        },
+      ]
+    };
   },
 
   setupController(controller, ...args) {

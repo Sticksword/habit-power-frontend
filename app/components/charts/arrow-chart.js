@@ -5,7 +5,6 @@ import tip from 'd3-tip';
 // Import the D3 packages we want to use
 import { select, selectAll } from 'd3-selection';
 import { scaleLinear, scaleBand } from 'd3-scale';
-import { extent, ascending } from 'd3-array';
 import { csv } from 'd3-fetch';
 import { axisLeft, axisTop } from 'd3-axis';
 import { nest } from 'd3-collection';
@@ -13,6 +12,7 @@ import { symbol, symbolTriangle } from 'd3-shape';
 import { max, min } from 'd3-array';
 
 
+// inspiration: https://bl.ocks.org/jadiehm/9b4fe461333368fcbbcc1c5cdff7f0ba
 export default Component.extend({
   layout,
 
@@ -20,7 +20,7 @@ export default Component.extend({
   classNames: ['arrow-chart'],
 
   width: 500,
-  height: 500,
+  height: 400,
 
   attributeBindings: ['width', 'height'],
 
@@ -57,7 +57,7 @@ export default Component.extend({
     //Creates the yScale
     var y0 = scaleBand()
         .rangeRound([height, 0], 0.2)
-        .domain(["York", "Wyoming", "Westmoreland", "Wayne"]);
+        .domain(["York", "Wyoming", "Westmoreland"]);
 
     //Defines the y axis styles
     var yAxis = axisLeft()
@@ -128,7 +128,6 @@ export default Component.extend({
       selectAll('.y.axis text')
         .attr("transform", "translate(-100,0)")
 
-      console.log(dataByCounty);
       var countyGroup = svg.selectAll(".g-county-group")
           .data(dataByCounty)
           .enter()
@@ -140,7 +139,6 @@ export default Component.extend({
 
       var countyArrows = countyGroup.append("path")
           .attr("transform", function(d) {
-            console.log(d.values);
             if (d.values[1].margin > d.values[0].margin) {
               return "translate(" + xScale(d.values[1].margin) + "," + -1 + ") rotate(-30)";
             }
