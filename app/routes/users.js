@@ -10,19 +10,20 @@ export default Route.extend({
   model(params) {
     const username = params.username;
     console.log(params);
+    return this.get('store').findRecord('user', username);
 
-    return {
-      'challenges': [
-        {
-          'name': 'Alpha',
-          'score': 91
-        },
-        {
-          'name': 'Beta',
-          'score': 93
-        },
-      ]
-    };
+    // return {
+    //   'challenges': [
+    //     {
+    //       'name': 'Alpha',
+    //       'score': 91
+    //     },
+    //     {
+    //       'name': 'Beta',
+    //       'score': 93
+    //     },
+    //   ]
+    // };
   },
 
   setupController(controller, ...args) {

@@ -1,11 +1,2 @@
 {{ log queryParams }}
-<div class="main-row">
-  {{ charts/donut-chart }}
-  {{ charts/arrow-chart }}
-</div>
-{{#each model.challenges as |challenge|}}
-  <div class="secondary-row">
-    <div>{{challenge.score}}</div>
-    <div>{{challenge.name}}</div>
-  </div>
-{{/each}}
+{{tab-view user=model}}

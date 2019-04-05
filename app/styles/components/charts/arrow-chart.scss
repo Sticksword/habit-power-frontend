@@ -4,7 +4,8 @@ $white: #ffffff;
 $color_silver_approx: #bdbdbd;
 $color_tapa_approx: #767676;
 $color_burning_sand_approx: #dd8f7d;
-$color_periwinkle_gray_approx: #c0ccdd;
+// $color_periwinkle_gray_approx: #c0ccdd;
+$color_background: #c5cceb;
 
 //fonts
 $font_0: sans-serif;
@@ -17,7 +18,7 @@ p {
 }
 .g-county-group {
     line {
-        stroke: $color_mine_shaft_approx;
+        // stroke: $color_mine_shaft_approx;
         stroke-width: 2px;
     }
     circle {
@@ -48,7 +49,7 @@ p {
     opacity: 0.5;
 }
 .demRect {
-    fill: $color_periwinkle_gray_approx;
+    fill: $color_background;
     opacity: 0.5;
 }
 .partylabel {

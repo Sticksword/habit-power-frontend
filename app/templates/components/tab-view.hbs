@@ -1,0 +1,17 @@
+<div class="bio">
+  <div>
+    {{user.firstName}}
+  </div>
+  <div>
+    {{user.about}}
+  </div>
+</div>
+<div class="tab-select">
+  <button {{action "toggleSuccessStoryPage"}}>success story</button>
+  <button {{action "toggleStatsPage"}}>stats</button>
+</div>
+{{#if onSuccessStory}}
+  {{success-story-page}}
+{{else}}
+  {{stats-page user=user}}
+{{/if}}

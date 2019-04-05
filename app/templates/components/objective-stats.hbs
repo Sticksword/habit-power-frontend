@@ -1,0 +1,9 @@
+<div>{{ charts/donut-chart score=objective.score width=circleRadius height=circleRadius }}</div>
+{{#if active}}
+  {{ charts/arrow-chart }}
+{{else}}
+  <div>
+    <div>{{ objective.title }}</div>
+    <div>{{ objective.description }}</div>
+  </div>
+{{/if}}
