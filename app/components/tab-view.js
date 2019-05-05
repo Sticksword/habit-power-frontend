@@ -2,7 +2,7 @@ import Component from '@ember/component';
 
 export default Component.extend({
   // passed in
-  model: null,
+  user: null,
   onSuccessStory: false, // if not passed in, then false
 
   actions: {

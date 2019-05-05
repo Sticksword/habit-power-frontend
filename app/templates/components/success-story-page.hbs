@@ -1,1 +1,7 @@
-{{yield}}
+{{#each stories as |successStory|}}
+  {{#each successStory.bodyJson as |questionAnswerHash|}}
+    <div>{{questionAnswerHash.question}}</div>
+    <div>{{questionAnswerHash.answer}}</div>
+    <br>
+  {{/each}}
+{{/each}}

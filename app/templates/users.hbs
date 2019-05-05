@@ -1,2 +1,10 @@
 {{ log queryParams }}
-{{tab-view user=model}}
+<div class="bio">
+  <div>
+    {{model.user.firstName}}
+  </div>
+  <div>
+    {{model.user.about}}
+  </div>
+</div>
+{{tab-view user=model.user stories=model.stories}}

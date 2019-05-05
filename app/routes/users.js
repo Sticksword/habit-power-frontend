@@ -10,7 +10,12 @@ export default Route.extend({
   model(params) {
     const username = params.username;
     console.log(params);
-    return this.get('store').findRecord('user', username);
+    let user = this.get('store').findRecord('user', username);
+    let stories = this.store.query('success-story', { user_id: 1 });
+    return Ember.RSVP.hash({
+      user: user,
+      stories: stories
+    });
 
     // return {
     //   'challenges': [
@@ -34,3 +39,14 @@ export default Route.extend({
     controller.set('queryParams', Object.keys(this.get('queryParams')));
   }
 });
+
+// return Ember.RSVP.hash({
+//   model1: this.get('store').find(...),
+//   model2: this.get('store').find(...)
+// }).then(result => {
+//   console.log(results.model1);
+//   console.log(results.model2);
+//   this.set('selected', result.listofthings.rejectBy('disabled').firstObject);
+//   this.set('somethingGenerated', this.somemethod(this.selected));
+//   return result;
+// });
